@@ -1,0 +1,29 @@
+name         : crc32c
+driver       : crc32c-intel
+module       : crc32c_intel
+priority     : 200
+refcnt       : 2
+selftest     : passed
+type         : shash
+blocksize    : 1
+digestsize   : 4
+
+name         : stdrng
+driver       : krng
+module       : kernel
+priority     : 200
+refcnt       : 1
+selftest     : passed
+type         : rng
+seedsize     : 0
+
+name         : md5
+driver       : md5-generic
+module       : kernel
+priority     : 0
+refcnt       : 1
+selftest     : passed
+type         : shash
+blocksize    : 64
+digestsize   : 16
+

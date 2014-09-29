@@ -1,0 +1,20 @@
+Sound Driver:3.8.1a-980706 (ALSA v1.0.24 emulation code)
+Kernel: Linux vm251 3.2.0-4-amd64 #1 SMP Debian 3.2.57-3+deb7u2 x86_64
+Config options: 0
+
+Installed drivers: 
+Type 10: ALSA emulation
+
+Card config: 
+--- no soundcards ---
+
+Audio devices: NOT ENABLED IN CONFIG
+
+Synth devices: NOT ENABLED IN CONFIG
+
+Midi devices: NOT ENABLED IN CONFIG
+
+Timers:
+31: system timer
+
+Mixers: NOT ENABLED IN CONFIG
