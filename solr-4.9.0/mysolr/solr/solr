@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Prerequisites:
-# 1. Solr needs to be installed at /etc/solr/solr-4.9.0/bssolr
+# 1. Solr needs to be installed at /etc/solr/solr-4.9.0/mysolr
 # 2. daemon needs to be installed
 # 3. Script needs to be executed by root
 
@@ -13,7 +13,7 @@ start () {
     echo -n "Starting solr..."
 
     # Start daemon
-    daemon --chdir='/etc/solr/solr-4.9.0/bssolr' --command "java -jar start.jar" --respawn --output=/var/log/solr/solr.log --name=solr --verbose
+    daemon --chdir='/etc/solr/solr-4.9.0/mysolr' --command "java -jar start.jar" --respawn --output=/var/log/solr/solr.log --name=solr --verbose
 
     RETVAL=$?
     if [ $RETVAL = 0 ]
