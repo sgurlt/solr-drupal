@@ -161,7 +161,8 @@
     <fieldType name="text" class="solr.TextField" positionIncrementGap="100">
       <analyzer type="index">
         <charFilter class="solr.MappingCharFilterFactory" mapping="mapping-ISOLatin1Accent.txt"/>
-        <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+        <!-- Word Part Search Filter: -->
+        <tokenizer class="solr.NGramTokenizerFactory" minGramSize="3" maxGramSize="15" />
         <!-- in this example, we will only use synonyms at query time
         <filter class="solr.SynonymFilterFactory" synonyms="index_synonyms.txt" ignoreCase="true" expand="false"/>
         -->
@@ -186,8 +187,6 @@
         <filter class="solr.LengthFilterFactory" min="2" max="100" />
         <filter class="solr.LowerCaseFilterFactory"/>
         <filter class="solr.SnowballPorterFilterFactory" language="English" protected="protwords.txt"/>
-	<!-- Word Part Search Filter: -->
-	<filter class="solr.EdgeNGramFilterFactory" minGramSize="2" maxGramSize="25"/>
         <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
       </analyzer>
       <analyzer type="query">
