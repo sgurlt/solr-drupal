@@ -161,8 +161,10 @@
     <fieldType name="text" class="solr.TextField" positionIncrementGap="100">
       <analyzer type="index">
         <charFilter class="solr.MappingCharFilterFactory" mapping="mapping-ISOLatin1Accent.txt"/>
+        <tokenizer class="solr.WhitespaceTokenizerFactory"/>
         <!-- Word Part Search Filter: -->
-        <tokenizer class="solr.NGramTokenizerFactory" minGramSize="3" maxGramSize="15" />
+        <filter class="solr.EdgeNGramFilterFactory" minGramSize="2" maxGramSize="15" side="front"/>
+        <filter class="solr.EdgeNGramFilterFactory" minGramSize="2" maxGramSize="15" side="back"/>
         <!-- in this example, we will only use synonyms at query time
         <filter class="solr.SynonymFilterFactory" synonyms="index_synonyms.txt" ignoreCase="true" expand="false"/>
         -->
